@@ -1,0 +1,6 @@
+if SHIELD_MANTIS
+
+config ZMK_MANTIS
+	default "Mantis"
+
+endif
