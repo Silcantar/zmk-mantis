@@ -1,2 +1,5 @@
-config MANTIS
+# Copyright (c) 2024 Joshua Lucas
+# SPDX-License-Identifier: MIT
+
+config SHIELD_MANTIS
 	def_bool $(shields_list_contains,mantis)

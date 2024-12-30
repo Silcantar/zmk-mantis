@@ -1,0 +1,265 @@
+/*
+ * Copyright (c) 2024 Joshua Lucas
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
+
+#define DEFAULT 0
+#define NUM 1
+#define NAV 2
+#define FUNC 3
+
+ / {
+	behaviors {
+		bspc_del: backspace_delete {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp BACKSPACE>, <&kp DELETE>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		
+		comm_scln: comma_semicolon {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp COMMA>, <&kp SEMICOLON>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+
+		dot_cln: dot_colon {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp DOT>, <&kp COLON>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+
+		brack: brackets {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+
+		brace: braces {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+
+		paren: parentheses {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+
+		angle: anglebrackets {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+	};
+
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+		tri_layer {
+			if-layers = <1 2>;
+			then-layer = <3>;
+		};
+	};
+
+	macros {
+		sel_word: select_word {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+				= <&macro_press &kp LCTRL>
+				, <&macro_tap &kp LEFT>
+				, <&macro_press &kp LSHFT>
+				, <&macro_tap &kp RIGHT>
+				, <&macro_release LSHFT>
+				, <&macro_release &kp LCTRL>
+				;
+		};
+	};
+
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+			display-name = "Base Layer"
+			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
+			//	|				|				|				|				|									|				|				|				|				|
+			//	|		J		|		Q		|		W		|		E		|									|		I		|		O		|		P		|	   ' "		|
+			//	|				|				|				|				|									|				|				|				|				|
+			//	'-------,-------'-------,-------'-------,-------'-------,-------'-------,					,-------'-------,-------'-------,-------'-------,-------'-------,-------'
+			//			|				|				|				|				|					|				|				|				|				|
+			//			|		A		|		S		|		D		|		R		|					|		U		|		K		|		L		|		B		|
+			//			|				|				|				|				|					|				|				|				|				|
+			//	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	|		Z		|		X		|		C		|		F		|		T		|	|		Y		|		N		|	   , ;		|	   . :		|	   / ?		|
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	'---------------'-------,-------'-------,-------'-------,-------'-------,-------'	'-------,-------'-------,-------'-------,-------'-------,-------'---------------'
+			//							|				|				|				|					|				|				|				|
+			//							|	Caps Lock	|		V		|		G		|					|		H		|		M		|	   RGUI		|
+			//							|				|				|				|					|				|				|				|
+			//							'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'
+			//									|	  LCtrl		|	  LShift	|	   LAlt		|	|	   RAlt		|	  RShift	|	  RCtrl		|
+			//									|				|				|				|	|				|				|				|
+			//									|	  Return	|	  Space		|	   LTab		|	|	   RTab		|	Backspace	|	  Escape	|
+			//									'---------------'-------,-------'-------,-------'	'-------,-------'-------,-------'---------------'
+			//															|				|					|				|
+			//															|	 Numeric	|					|	 Function	|
+			//															|				|					|				|
+			//															'---------------'					'---------------'
+
+			bindings = <
+					&kp J			&kp Q			&kp W			&kp E												&kp I			&kp O			&kp P			&kp SQT
+
+							&kp A			&kp S			&kp D			&kp R								&kp U			&kp K			&kp L			&kp B
+
+					&kp Z			&kp X			&kp C			&kp F			&kp T				&kp Y			&kp N			&comm_scln		&dot_cln		&kp BSLH
+
+											&kp CAPS		&kp V			&kp G								&kp H			&kp M			&kp RGUI
+
+										&mt LCTRL RETURN	&mt LSHIFT SPACE	&mt LALT LS(TAB)		&mt RALT TAB	&mt RSHIFT BSPC		&mt RCTRL ESC
+
+																			&mo NUM								&mo NAV
+			>;
+		};
+
+		numeric {
+			display-name = "Numeric Layer"
+			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
+			//	|				|				|				|				|									|				|				|				|				|
+			//	|		&		|		\		|		!		|		^		|									|		8		|		9		|		*		|	   - _		|
+			//	|				|				|				|				|									|				|				|				|				|
+			//	'-------,-------'-------,-------'-------,-------'-------,-------'-------,					,-------'-------,-------'-------,-------'-------,-------'-------,-------'
+			//			|				|				|				|				|					|				|				|				|				|
+			//			|		@		|	   [ ]		|	   { }		|		%		|					|		7		|		5		|		6		|		0		|
+			//			|				|				|				|				|					|				|				|				|				|
+			//	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	|	   ` ~		|		#		|		$		|	   ( )		|		|		|	|		/		|		4		|		2		|		3		|		.		|
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	'---------------'-------,-------'-------,-------'-------,-------'-------,-------'	'-------,-------'-------,-------'-------,-------'-------,-------'---------------'
+			//							|				|				|				|					|				|				|				|
+			//							|	  trans		|		=		|	   < >		|					|		+		|		1		|	  trans		|
+			//							|				|				|				|					|				|				|				|
+			//							'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'
+			//									|				|				|				|	|				|				|				|
+			//									|	  trans		|	  trans		|	  trans		|	|	  trans		|	  trans		|	  trans		|
+			//									|				|				|				|	|				|				|				|
+			//									'---------------'-------,-------'-------,-------'	'-------,-------'-------,-------'---------------'
+			//															|				|					|				|
+			//															|	  trans		|					|	  trans		|
+			//															|				|					|				|
+			//															'---------------'					'---------------'
+
+			bindings = <
+					&kp AMPS		&kp BSLH		&kp EXCL		&kp CARET											&kp N8			&kp N9			&kp STAR		&kp MINUS
+
+							&kp AT			&bracket		&brace			&kp PERCENT							&kp N7			&kp N5			&kp N6			&kp N0
+
+					&kp GRAVE		&kp HASH		&kp DOLLAR		&paren			&kp PIPE			&kp SLASH		&kp N4			&kp N2			&kp N3			&kp DOT
+
+											&trans			&kp EQUAL		&angle								&kp PLUS		&kp N1			&trans
+
+													&trans			&trans			&trans				&trans			&trans			&trans
+
+																			&trans								&trans
+			>;
+		};
+
+		navigation {
+			display-name = "Navigation Layer"
+			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
+			//	|				|				|				|				|									|				|				|				|				|
+			//	|	   Redo		|	   Top		|	   Home		|		Up		|									|	  Print		|	 Save As	|  Print Screen	|	   Help		|
+			//	|				|				|				|				|									|				|				|				|				|
+			//	'-------,-------'-------,-------'-------,-------'-------,-------'-------,					,-------'-------,-------'-------,-------'-------,-------'-------,-------'
+			//			|				|				|				|				|					|				|				|				|				|
+			//			|	  Bottom	|	   Left		|	   Down		|	   End		|					|	 Refresh	|	   Edit		|	   Save		|	   Open		|
+			//			|				|				|				|				|					|				|				|				|				|
+			//	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	|	   Undo		|	   Cut		|	   Copy		|	  Right		|	 Page Up	|	|	  Symbol	|	   New		|	 Replace	|   Select All	|  Select Word	|
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	'---------------'-------,-------'-------,-------'-------,-------'-------,-------'	'-------,-------'-------,-------'-------,-------'-------,-------'---------------'
+			//							|				|				|				|					|				|				|				|
+			//							|	  trans		|	  Paste		|	Page Down	|					|	  Close		|	   Find		|	  trans		|
+			//							|				|				|				|					|				|				|				|
+			//							'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'
+			//									|				|				|				|	|				|				|				|
+			//									|	  trans		|	  trans		|	  trans		|	|	  trans		|	  trans		|	  trans		|
+			//									|				|				|				|	|				|				|				|
+			//									'---------------'-------,-------'-------,-------'	'-------,-------'-------,-------'---------------'
+			//															|				|					|				|
+			//															|	  trans		|					|	  trans		|
+			//															|				|					|				|
+			//															'---------------'					'---------------'
+
+			bindings = <
+					&kp LC(LS(Z))	&kp LC(HOME)	&kp HOME		&kp UP												&kp LC(P)		&kp F12			&kp PRINTSCREEN	&kp F1
+
+							&kp LC(END)		&kp LEFT		&kp DOWN		&kp END								&kp F5			&kp F2			&kp LC(S)		&kp LC(O)
+
+					&kp LC(Z)		&kp LC(X)		&kp LC(C)		&kp RIGHT		&kp PG_UP			&kp LG(DOT)		&kp LC(N)		&kp LC(H)		&kp LC(A)		&sel_word
+
+											&trans			&kp LC(V)		&kp PG_DN							&kp LC(Q)		&kp LC(F)		&trans
+
+													&trans			&trans			&trans				&trans			&trans			&trans
+
+																			&trans								&trans
+			>;
+		};
+
+		function {
+			display-name = "Function Layer"
+			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
+			//	|				|				|				|				|									|				|				|				|				|
+			//	|	  Reset		|	   F23		|  Pause Break	|	   F11		|									|	   F12		| Studio Unlock	|	   F24		|   Bootloader	|
+			//	|				|				|				|				|									|				|				|				|				|
+			//	'-------,-------'-------,-------'-------,-------'-------,-------'-------,					,-------'-------,-------'-------,-------'-------,-------'-------,-------'
+			//			|				|				|				|				|					|				|				|				|				|
+			//			|		F1		|		F2		|		F3		|	  Insert	|					|  Scroll Lock	|		F8		|		F9		|	   F10		|
+			//			|				|				|				|				|					|				|				|				|				|
+			//	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'-------,-------'-------,
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	|	   F13		|	   F14		|	   F15		|		F4		|		F5		|	|		F6		|		F7		|	   F20		|	   F21		|	   F22	|
+			//	|				|				|				|				|				|	|				|				|				|				|				|
+			//	'---------------'-------,-------'-------,-------'-------,-------'-------,-------'	'-------,-------'-------,-------'-------,-------'-------,-------'---------------'
+			//							|				|				|				|					|				|				|				|
+			//							|	  trans		|	   F16		|	   F17		|					|	   F18		|	   F19		|	  trans		|
+			//							|				|				|				|					|				|				|				|
+			//							'-------,-------'-------,-------'-------,-------'-------,	,-------'-------,-------'-------,-------'-------,-------'
+			//									|				|				|				|	|				|				|				|
+			//									|	  trans		|	  trans		|	  trans		|	|	  trans		|	  trans		|	  trans		|
+			//									|				|				|				|	|				|				|				|
+			//									'---------------'-------,-------'-------,-------'	'-------,-------'-------,-------'---------------'
+			//															|				|					|				|
+			//															|	  trans		|					|	  trans		|
+			//															|				|					|				|
+			//															'---------------'					'---------------'
+
+			bindings = <
+					&sys_reset		&kp F23			&kp PAUSE_BREAK	&kp F11												&kp F12			&studio_unlock	&kp F24			&bootloader
+
+							&kp F1			&kp F2			&kp F3			&kp INSERT							&kp SCROLLLOCK	&kp F8			&kp F9			&kp F10
+
+					&kp F13			&kp F14			&kp F15			&kp F4			&kp F5				&kp F6			&kp F7			&kp F20			&kp F21			&kp F22
+
+											&trans			&kp F16			&kp F17								&kp F18			&kp F19			&trans
+
+													&trans			&trans			&trans				&trans			&trans			&trans
+
+																			&trans								&trans
+			>;
+		};
+	};
+ };

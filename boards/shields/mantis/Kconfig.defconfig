@@ -1,6 +1,9 @@
+# Copyright (c) 2024 Joshua Lucas
+# SPDX-License-Identifier: MIT
+
 if SHIELD_MANTIS
 
-config ZMK_MANTIS
+config ZMK_KEYBOARD_NAME
 	default "Mantis"
 
 endif
