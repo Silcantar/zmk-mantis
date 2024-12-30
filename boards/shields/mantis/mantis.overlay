@@ -6,7 +6,7 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include <mantis-layouts.dtsi>
+#include "mantis-layouts.dtsi"
 
 / {
     chosen {
