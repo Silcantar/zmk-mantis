@@ -164,7 +164,7 @@
 			bindings = <
 					&kp AMPS		&kp BSLH		&kp EXCL		&kp CARET											&kp N8			&kp N9			&kp STAR		&kp MINUS
 
-							&kp AT			&bracket		&brace			&kp PERCENT							&kp N7			&kp N5			&kp N6			&kp N0
+							&kp AT			&brack			&brace			&kp PERCENT							&kp N7			&kp N5			&kp N6			&kp N0
 
 					&kp GRAVE		&kp HASH		&kp DOLLAR		&paren			&kp PIPE			&kp SLASH		&kp N4			&kp N2			&kp N3			&kp DOT
 
