@@ -14,10 +14,10 @@
 		// Other chosen items
 	};
 
-	&physical_layout0 {
-		kscan = <&kscan0>;
-		transform = <&default_transform>;
-	};
+	//&physical_layout0 {
+	//	kscan = <&kscan0>;
+	//	transform = <&default_transform>;
+	//};
 
 	default_transform: keymap_transform0 {
 		compatible = "zmk,matrix-transform";
