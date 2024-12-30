@@ -18,7 +18,7 @@
         compatible = "zmk,matrix-transform";
         columns = <10>; // Length of the "col-gpios" array
         rows = <4>; // Length of the "row-gpios" array
-        map = 
+        map = <
           //Key labels are from Felix Kuehling's suggested default keymap for the Mantis.
           //J       Q       W       E                       I       O       P       '
             RC(3,0) RC(0,0) RC(0,1) RC(0,2)                 RC(0,7) RC(0,8) RC(0,9) RC(3,9)
