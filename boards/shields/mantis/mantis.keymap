@@ -91,7 +91,7 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-			display-name = "Base Layer"
+			display-name = "Base Layer";
 			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
 			//	|				|				|				|				|									|				|				|				|				|
 			//	|		J		|		Q		|		W		|		E		|									|		I		|		O		|		P		|	   ' "		|
@@ -134,7 +134,7 @@
 		};
 
 		numeric {
-			display-name = "Numeric Layer"
+			display-name = "Numeric Layer";
 			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
 			//	|				|				|				|				|									|				|				|				|				|
 			//	|		&		|		\		|		!		|		^		|									|		8		|		9		|		*		|	   - _		|
@@ -177,7 +177,7 @@
 		};
 
 		navigation {
-			display-name = "Navigation Layer"
+			display-name = "Navigation Layer";
 			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
 			//	|				|				|				|				|									|				|				|				|				|
 			//	|	   Redo		|	   Top		|	   Home		|		Up		|									|	  Print		|	 Save As	|  Print Screen	|	   Help		|
@@ -220,7 +220,7 @@
 		};
 
 		function {
-			display-name = "Function Layer"
+			display-name = "Function Layer";
 			//	,---------------,---------------,---------------,---------------,									,---------------,---------------,---------------,---------------,
 			//	|				|				|				|				|									|				|				|				|				|
 			//	|	  Reset		|	   F23		|  Pause Break	|	   F11		|									|	   F12		| Studio Unlock	|	   F24		|   Bootloader	|
