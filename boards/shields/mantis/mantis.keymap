@@ -261,5 +261,54 @@
 																			&trans								&trans
 			>;
 		};
+
+		// Extra layers for ZMK Studio
+		extra4 {
+			status = "reserved";
+		};
+
+		extra5 {
+			status = "reserved";
+		};
+
+		extra6 {
+			status = "reserved";
+		};
+
+		extra7 {
+			status = "reserved";
+		};
+
+		extra8 {
+			status = "reserved";
+		};
+
+		extra9 {
+			status = "reserved";
+		};
+
+		extra10 {
+			status = "reserved";
+		};
+
+		extra11 {
+			status = "reserved";
+		};
+
+		extra12 {
+			status = "reserved";
+		};
+
+		extra13 {
+			status = "reserved";
+		};
+
+		extra14 {
+			status = "reserved";
+		};
+
+		extra15 {
+			status = "reserved";
+		};
 	};
  };
