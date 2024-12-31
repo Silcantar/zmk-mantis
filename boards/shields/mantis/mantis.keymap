@@ -34,6 +34,13 @@
 			bindings = <&kp DOT>, <&kp COLON>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
+		
+		under_minus: underscore_minus {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp UNDERSCORE>, <&kp MINUS>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
 
 		brack: brackets {
 			compatible = "zmk,behavior-mod-morph";
@@ -67,8 +74,8 @@
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
 		tri_layer {
-			if-layers = <1 2>;
-			then-layer = <3>;
+			if-layers = <NUM NAV>;
+			then-layer = <FUNC>;
 		};
 	};
 
@@ -123,7 +130,7 @@
 
 							&kp A			&kp S			&kp D			&kp R								&kp U			&kp K			&kp L			&kp B
 
-					&kp Z			&kp X			&kp C			&kp F			&kp T				&kp Y			&kp N			&comm_scln		&dot_cln		&kp BSLH
+					&kp Z			&kp X			&kp C			&kp F			&kp T				&kp Y			&kp N			&comm_scln		&dot_cln		&kp SLASH
 
 											&kp CAPS		&kp V			&kp G								&kp H			&kp M			&kp RGUI
 
