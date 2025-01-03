@@ -4,7 +4,6 @@ name: Mantis
 type: shield
 url: https://github.com/fxkuehl/mantis
 requires: [pro_micro]
-exposes: [i2c_oled]
 features:
   - keys
   - backlight

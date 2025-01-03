@@ -12,52 +12,52 @@
 		display-name = "Mantis Layout";
 		transform = <&default_transform>;
 		kscan = <&kscan0>;
-		keys  //					 w   h	x	y	 rot	rx	ry
-			= <&key_physical_attrs 100  87	0	0	   0	 0	 0> //J
-			, <&key_physical_attrs 100  87  100	0	   0	 0	 0> //Q
-			, <&key_physical_attrs 100  87  200	0	   0	 0	 0> //W
-			, <&key_physical_attrs 100  87  300	0	   0	 0	 0> //E
-			, <&key_physical_attrs 100  87  610	0	   0	 0	 0> //I
-			, <&key_physical_attrs 100  87  710	0	   0	 0	 0> //O
-			, <&key_physical_attrs 100  87  810	0	   0	 0	 0> //P
-			, <&key_physical_attrs 100  87  910	0	   0	 0	 0> //'
+		keys	//					w	h	x	y	rot	rx	ry
+			= <&key_physical_attrs	100	87	0	0	0	0	0> //J
+			, <&key_physical_attrs	100	87	100	0	0	0	0> //Q
+			, <&key_physical_attrs	100	87	200	0	0	0	0> //W
+			, <&key_physical_attrs	100	87	300	0	0	0	0> //E
+			, <&key_physical_attrs	100	87	610	0	0	0	0> //I
+			, <&key_physical_attrs	100	87	710	0	0	0	0> //O
+			, <&key_physical_attrs	100	87	810	0	0	0	0> //P
+			, <&key_physical_attrs	100	87	910	0	0	0	0> //'
 
-			, <&key_physical_attrs 100  87   50   87	   0	 0	 0> //A
-			, <&key_physical_attrs 100  87  150   87	   0	 0	 0> //S
-			, <&key_physical_attrs 100  87  250   87	   0	 0	 0> //D
-			, <&key_physical_attrs 100  87  350   87	   0	 0	 0> //R
-			, <&key_physical_attrs 100  87  560   87	   0	 0	 0> //U
-			, <&key_physical_attrs 100  87  660   87	   0	 0	 0> //K
-			, <&key_physical_attrs 100  87  760   87	   0	 0	 0> //L
-			, <&key_physical_attrs 100  87  860   87	   0	 0	 0> //B
+			, <&key_physical_attrs	100	87	 50	87	0	0	0> //A
+			, <&key_physical_attrs	100	87	150	87	0	0	0> //S
+			, <&key_physical_attrs	100	87	250	87	0	0	0> //D
+			, <&key_physical_attrs	100	87	350	87	0	0	0> //R
+			, <&key_physical_attrs	100	87	560	87	0	0	0> //U
+			, <&key_physical_attrs	100	87	660	87	0	0	0> //K
+			, <&key_physical_attrs	100	87	760	87	0	0	0> //L
+			, <&key_physical_attrs	100	87	860	87	0	0	0> //B
 
-			, <&key_physical_attrs 100  87	0  174	   0	 0	 0> //Z
-			, <&key_physical_attrs 100  87  100  174	   0	 0	 0> //X
-			, <&key_physical_attrs 100  87  200  174	   0	 0	 0> //C
-			, <&key_physical_attrs 100  87  300  174	   0	 0	 0> //F
-			, <&key_physical_attrs 100  87  400  174	   0	 0	 0> //T
-			, <&key_physical_attrs 100  87  510  174	   0	 0	 0> //Y
-			, <&key_physical_attrs 100  87  610  174	   0	 0	 0> //N
-			, <&key_physical_attrs 100  87  710  174	   0	 0	 0> //,
-			, <&key_physical_attrs 100  87  810  174	   0	 0	 0> //.
-			, <&key_physical_attrs 100  87  910  174	   0	 0	 0> ///
+			, <&key_physical_attrs	100	87	0	174	0	0	0> //Z
+			, <&key_physical_attrs	100	87	100	174	0	0	0> //X
+			, <&key_physical_attrs	100	87	200	174	0	0	0> //C
+			, <&key_physical_attrs	100	87	300	174	0	0	0> //F
+			, <&key_physical_attrs	100	87	400	174	0	0	0> //T
+			, <&key_physical_attrs	100	87	510	174	0	0	0> //Y
+			, <&key_physical_attrs	100	87	610	174	0	0	0> //N
+			, <&key_physical_attrs	100	87	710	174	0	0	0> //,
+			, <&key_physical_attrs	100	87	810	174	0	0	0> //.
+			, <&key_physical_attrs	100	87	910	174	0	0	0> ///
 
-			, <&key_physical_attrs 100  87  150  261	   0	 0	 0> //Win
-			, <&key_physical_attrs 100  87  250  261	   0	 0	 0> //V
-			, <&key_physical_attrs 100  87  350  261	   0	 0	 0> //G
-			, <&key_physical_attrs 100  87  560  261	   0	 0	 0> //H
-			, <&key_physical_attrs 100  87  660  261	   0	 0	 0> //M
-			, <&key_physical_attrs 100  87  760  261	   0	 0	 0> //Menu
+			, <&key_physical_attrs	100	87	150	261	0	0	0> //Win
+			, <&key_physical_attrs	100	87	250	261	0	0	0> //V
+			, <&key_physical_attrs	100	87	350	261	0	0	0> //G
+			, <&key_physical_attrs	100	87	560	261	0	0	0> //H
+			, <&key_physical_attrs	100	87	660	261	0	0	0> //M
+			, <&key_physical_attrs	100	87	760	261	0	0	0> //Menu
 
-			, <&key_physical_attrs 100  87  200  358	   0	 0	 0> //Alt
-			, <&key_physical_attrs 100  87  300  358	   0	 0	 0> //Bspc
-			, <&key_physical_attrs 100  87  400  358	   0	 0	 0> //_
-			, <&key_physical_attrs 100  87  510  358	   0	 0	 0> //Ent
-			, <&key_physical_attrs 100  87  610  358	   0	 0	 0> //Spc
-			, <&key_physical_attrs 100  87  710  358	   0	 0	 0> //Del
+			, <&key_physical_attrs	100	87	200	358	0	0	0> //Alt
+			, <&key_physical_attrs	100	87	300	358	0	0	0> //Bspc
+			, <&key_physical_attrs	100	87	400	358	0	0	0> //_
+			, <&key_physical_attrs	100	87	510	358	0	0	0> //Ent
+			, <&key_physical_attrs	100	87	610	358	0	0	0> //Spc
+			, <&key_physical_attrs	100	87	710	358	0	0	0> //Del
 
-			, <&key_physical_attrs 100  87  350  445	   0	 0	 0> //-
-			, <&key_physical_attrs 100  87  560  445	   0	 0	 0> //Tab
+			, <&key_physical_attrs	100	87	350	445	0	0	0> //-
+			, <&key_physical_attrs	100	87	560	445	0	0	0> //Tab
 			;
 	};
 };
