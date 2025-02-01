@@ -6,6 +6,7 @@
 
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
 #define NUM 1
@@ -255,7 +256,7 @@
 			//															'---------------'					'---------------'
 
 			bindings = <
-					&sys_reset		&kp F23			&kp PAUSE_BREAK	&kp F11												&kp F12			&studio_unlock	&kp F24			&bootloader
+					&sys_reset		&bt BT_PRV		&kp PAUSE_BREAK	&kp F11												&kp F12			&studio_unlock	&bt BT_NXT		&bootloader
 
 							&kp F1			&kp F2			&kp F3			&kp INSERT							&kp SCROLLLOCK	&kp F8			&kp F9			&kp F10
 
