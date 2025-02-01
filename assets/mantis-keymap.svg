@@ -2,7 +2,7 @@
 <svg
    inkscape:export-ydpi="254"
    inkscape:export-xdpi="254"
-   inkscape:export-filename="C:\Users\j.lucas\source\repos\zmk-mantis\mantis-layout.png"
+   inkscape:export-filename="mantis-keymap.png"
    sodipodi:docname="mantis-keymap.svg"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    id="svg8"
@@ -1200,7 +1200,7 @@
          id="tspan1039-24-3"
          sodipodi:role="line">T</tspan></text>
     <text
-       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10.58333333px;white-space:pre;shape-inside:url(#rect1387)"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1387);display:inline;fill:#000000;fill-opacity:1;stroke:none"
        id="text1385"
        xml:space="preserve" />
     <text
